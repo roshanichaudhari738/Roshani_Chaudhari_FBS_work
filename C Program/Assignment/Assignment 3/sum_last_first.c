@@ -1,0 +1,11 @@
+#include<stdio.h>
+void main(){
+	int no=22345;
+	int ld=no%10;
+	while(no>10){
+		no=no/10;
+	}
+	
+	int sum=no+ld;
+	printf("Sum of %d and %d is %d",no,ld,sum);
+}
