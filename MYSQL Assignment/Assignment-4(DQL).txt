@@ -1,0 +1,83 @@
+Assignment-4(DQL)
+
+1.Write a query to display the names (first_name, last_name) using alias
+name “First Name", "Last Name".
+->select first_name as "First Name", last_name as "Last Name" from employees;
+
+2.Write a query to get unique department ID from employee table.
+-> select Distinct Department_Id from Employees;
+
+3.Write a query to get all employee details from the employee table order
+by first name, descending
+->select * from Employees order by First_Name desc;
+
+4.Write a query to get the names (first_name, last_name), salary, PF of all
+the employees (PF is calculated as 15% of salary).
+->select First_Name,Last_Name,Salary,(Salary * 0.15) as PF from Employees;
+
+5.Write a query to get the employee ID, names (first_name, last_name),
+salary in ascending order of salary.
+->select  Employees_ID,First_Name,Last_Name,Salary from Employees order by Salary asc;
+
+6.Write a query to get the total salaries payable to employees.
+->select Salary,sum(Salary) as "Total Salary" from Employees group by Salary;
+
+7. Write a query to get the maximum and minimum salary from employees
+table.
+-> select min(Salary) as "Minimum Salary",max(Salary) as "Maximum Salary" from Employees;
+
+8. Write a query to get the average salary and number of employees in the
+employees table.
+->select avg(Salary),count(*) from Employees;
+
+9. Write a query to get the number of employees working with the
+company.
+->select count(*) as "Total Employee" from Employees;
+
+10.Write a query to get the number of jobs available in the employees table.
+->select count(distinct Job_Id) as "Total Jobs" from Employees;
+
+11.Write a query to select first 10 records from a table.
+->select * from Employees limit 10;
+
+12.Write a query to display the name (first_name, last_name) and salary for
+all employees whose salary is not in the range $10,000 through $15,000
+->select First_Name,Last_Name,Salary from Employees where Salary not between 10000 and 15000;
+
+13.Write a query to display the name (first_name, last_name) and
+department ID of all employees in departments 30 or 100 in ascending
+order.
+->select First_Name,Last_Name,Department_Id from Employees where Department_Id in(60,20)
+-> order by Department_Id ;
+
+14.Write a query to display the name (first_name, last_name) and salary for
+all employees whose salary is not in the range $10,000 through $15,000
+and are in department 30 or 100.
+->select First_Name,Last_Name,Salary from Employees where Salary not between 10000 and 15000
+-> and Department_Id in(60,20);
+
+15.Write a query to display the name (first_name, last_name) and hire date
+for all employees who were hired in 1987.
+-> select First_Name,Last_Name,Hire_date from Employees where year(Hire_date);
+
+16.Write a query to display the first_name of all employees who have both
+"b" and "c" in their first name.
+->select First_Name from Employees where
+-> First_Name like '%b%'
+-> and First_Name like '%c%';
+
+17.Write a query to display the last name of employees whose names have
+exactly 6 characters.
+->select Last_Name
+-> from employees
+-> where length(Last_Name)=6;
+
+18.Write a query to display the last name of employees having 'e' as the third
+character.
+->select Last_Name
+-> from employees
+-> where Last_Name like '__e%';
+
+19.Write a query to select all record from employees where last name in
+'BLAKE', 'SCOTT', 'KING' and 'FORD'.
+->select * from employees whare last_name in("BLAKE","SCOTT","KING","FORD");
