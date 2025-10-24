@@ -1,0 +1,23 @@
+Set A
+1.select name,salary from employee order by salary desc;
+2.select * from employee order by salary desc limit 5;
+3.select * from employee where limit 3,5;
+4.select count(*) from employee;
+5.select department,avg(salary) from employee 
+where department= avg(salary)>50000 group by department;
+6.
+7.
+8.select name from student where like "A%";
+9.
+10.
+11.a)
+12.d)
+13.a)
+14.
+15.d)
+16.SELECT c.region,SUM(o.total_amount) AS total_orders
+FROM Orders o JOIN Customers c 
+ON o.customer_id = c.customer_id
+GROUP BY c.region
+HAVING SUM(o.total_amount) > 10000;
+17.
