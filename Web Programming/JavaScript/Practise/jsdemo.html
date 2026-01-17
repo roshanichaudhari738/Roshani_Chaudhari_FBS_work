@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // alert("Hello World")
+    // a=parseInt(prompt("Enter the No 1"))
+    // b=parseInt(prompt("Enter the No 1"))
+    // res=a+b
+    // console.log(res)
+    // a=prompt("ff")
+    // console.log(a);
+
+    // a=confirm("Do you want to confirm")//return the boolean value
+    // console.log(a);
+//     console.log("Code start")
+//    function addition(){
+//         no1=parseInt(document.getElementById("first").value)
+//         no2=parseInt(document.getElementById("second").value)
+//         res=no1*no2
+//         console.log(res);
+//         //document.getElementById("res").innerHTML="Addition is "+res
+//         document.getElementById("btn").innerHTML="Addition is "+res
+//     }
+//     console.log("Code end");
+
+       function calci(op)
+       {
+            no1=parseInt(document.getElementById("first").value)
+            no2=parseInt(document.getElementById("second").value)
+
+            if(op=='+')
+                res=no1+no2
+            else if(op=='-')
+                res=no1-no2
+            else if(op=='*')
+                res=no1*no2
+            else
+                res=no1/no2
+            document.getElementById("res").innerHTML="Result is "+res
+       }
+    
+</script>
+<style>
+    div{
+        border: 2px solid red;
+        margin: 10px;
+        padding: 50px;
+        
+    }
+
+    div span{
+        text-align: center;
+    }
+
+</style>
+<body>
+    <div>
+    firstNum: <input type="text" id="first">
+    secondNum: <input type="text" id="second">
+    <br>
+    <br>
+    <button onclick="calci('+')" id="btn">Add</button>
+    <button onclick="calci('-')" id="btn">Sub</button>
+    <button onclick="calci('*')" id="btn">Mul</button>
+    <button onclick="calci('/')" id="btn">Divide</button>
+    <br>
+    <span id="res">Output here is </span>
+    </div>
+</body>
+</html>

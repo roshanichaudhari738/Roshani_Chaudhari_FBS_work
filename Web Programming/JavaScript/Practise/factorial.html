@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+    function factorial()
+    {
+        num1=parseInt(document.getElementById("first").value)
+        f=1
+        for(i=1;i<=num1;i++)
+            f=f*i;
+        document.getElementById("res").innerHTML="Factorial is "+f
+    }
+</script>
+<body>
+    <div>
+         firstNum: <input type="text" id="first">
+         <br>
+         <button onclick="factorial()" id="btn">Factorial</button>
+         <br>
+         <span id="res">Factorial is </span>
+    </div>
+</body>
+</html>
