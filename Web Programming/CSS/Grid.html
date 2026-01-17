@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+</head>
+<style>
+    .items{
+       /* height: 50px;
+        width: 50px; */
+        background-color: aquamarine;
+        border: 2px solid black;
+       
+        
+    }
+
+    #item1{
+        /* grid-column-start: 1;
+        grid-column-end: 4; */
+        grid-column: span 3;
+    }
+
+    .container{
+         width: 300px;
+         /* height: 300px; */
+        border: 2px solid red;
+        background-color: rgb(32, 118, 180);
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        
+    }
+
+    .items button{
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="items" id="item1">
+           <!-- <input type="text"> -->
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+
+        <div class="items">
+            <button>1</button>
+        </div>
+    </div>
+</body>
+</html>
