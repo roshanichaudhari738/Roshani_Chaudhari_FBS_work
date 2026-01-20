@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<script src="form.js"></script>
+
+<style>
+    
+</style>
+
+<body>
+    <h1>Registration Form</h1>
+    <form action="/dummy" method="get" id="regform">
+        <table>
+            <tr>
+                <td>
+                    Name : <input type="text" placeholder="Enter the Name" id="username" onblur="validate()"> 
+                    <span id="unameerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email : <input type="email" placeholder="Enter the Email" id="email" onblur="validateemail()">
+                    <span id="emailerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mobile No : <input type="number" placeholder="Enter the Mobile" id="mobno" onblur="validmobileno()">
+                    <span id="mobnoerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password : <input type="password" placeholder="Enter the Password" id="pass" onblur="validPass()">
+                    <span id="passerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender : Male<input type="radio" name="gender">
+                    Female<input type="radio" name="gender">
+                    Other<input type="radio" name="gender">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    select the subject :
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <input type="checkbox" name="subject"> C <br>
+                     <input type="checkbox" name="subject"> CPP <br>
+                     <input type="checkbox" name="subject"> Core Java <br>
+                     <input type="checkbox" name="subject"> advanced Java <br>
+                     <input type="checkbox" name="subject"> MYSQL <br>
+                     <span id="checkerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    State :
+                    <select name="state">
+                        <option value="">Maharashtra</option>
+                        <option value="">Madhya Pradhesh</option>
+                        <option value="">Rajasthan</option>
+                        <option value="">Kerala</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Statelist : <input type="text" name="state" list="statelist">
+                    <datalist id="statelist">
+                        <option value="mh">Maharashtra</option>
+                        <option value="mp">Madhya Pradhesh</option>
+                        <option value="rj">Rajasthan</option>
+                        <option value="k">Kerala</option>
+                        <option value="h">Haryana</option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- <button onclick="submitform()" id="regform">Submit</button> -->
+                     <input type="button" value="submit" onclick="submitform()" >
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
