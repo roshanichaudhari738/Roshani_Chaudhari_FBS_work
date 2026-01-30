@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    //   sum=function(prev,cv)
+    //   {
+    //     console.log(prev);
+    //     console.log(cv);
+        
+    //     return prev+cv
+    //   }
+    // arr=[1,2,3,4,5,6,7,8,9,11,12]
+    // res=arr.reduce(sum)
+    // console.log(res);
+
+    findmin=function(prev,cv)
+      {
+        
+        return prev>cv?prev:cv
+      }
+
+      evenodd=function(cv)
+      {
+        
+        return cv%2==0;
+      }
+    arr=[1,2,3,4,5,6,7,8,9,11,12]
+    // res=arr.reduce(findmin) //return the single result
+    // console.log(res);
+    even=arr.filter(evenodd)
+    // console.log(even);
+
+    verifyname=function(cv)
+    {
+       // return cv.includes("r")
+        return cv.startsWith("S")
+    }
+
+    arr=["Roshani","Varun","Shradha","Niti","Sanvi","Siya"]
+    name=arr.filter(verifyname);
+    console.log(name);
+
+    squarenum=function(cv)
+    {
+      return cv*cv
+    }
+    arr=[1,2,3,4,5,6,7,8,9,11,12]
+    square=arr.map(squarenum);
+    console.log(square);
+    
+    
+</script>
+<body>
+    
+</body>
+</html>
