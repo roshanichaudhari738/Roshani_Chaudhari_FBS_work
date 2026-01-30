@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .recipe{
+    border: 2px solid red;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.content{
+    border: 2px solid green;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+button{
+      margin-top: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .ingredients{
+   display: none;
+}
+
+  </style>
+  <script>
+    function display() {
+      fetch("https://dummyjson.com/recipes")
+        .then((Response) => Response.json())
+        .then((data) => displayOnPage(data));
+    }
+
+    // function displayingredient()
+    // {
+    //     // document.getElementById("ig").innerHTML
+    //     for(j=0;j<data.ingredients.length;j++)
+    // {
+    //     ingredient=data.ingredients[j]
+    //     innerHTML=""
+    //     innerHTML=innerHTML+`
+    //         Ingredients : ${ingredient}<br>
+    //     `
+    //     document.get
+    // }
+    // }
+
+    function toggleIngredients(id){
+    let div = document.getElementById(id);
+    div.style.display = (div.style.display == "none") ? "block" : "none";
+  }
+
+    function displayOnPage(data) {
+        console.log(data.recipes[0]);
+        // text=data.recipes[0]
+        innerHTML="<div class='recipe'>"
+        for(i=0;i<data.recipes.length;i++)
+    {
+        food=data.recipes[i]
+        ingId = "ing"+i;
+        innerHTML=innerHTML+`
+        <div class='content'>
+        Recipes Id : ${food.id} <br>
+        Recipes name : ${food.name} <br>
+        <img src='${food.image}' height='100px' width='100px'> <br>
+        <button onclick="toggleIngredients('${ingId}')">Show Ingredients</button>
+
+          <div class="ingredients" id="${ingId}">
+        `
+        innerHTML=innerHTML+`
+            Ingredients :<br>
+        `
+        for(j=0;j<food.ingredients.length;j++)
+    {
+        ingredient=food.ingredients[j]
+        innerHTML=innerHTML+`
+            ${ingredient}<br>
+        `
+    }
+    innerHTML=innerHTML+`</div></div>`
+        
+    }
+    innerHTML=innerHTML+`</div>`
+       document.getElementById("container").innerHTML=innerHTML; 
+    }
+  </script>
+  <body>
+    <div id="container">
+        
+    </div>
+    <span id="Welcome"></span>
+        <button onclick="logout()">LogOut</button>
+    <button onclick="display()">display</button>
+    <script>
+        if(sessionStorage.getItem('isLoggedIn')!='true')
+    {
+        alert('You are not logged in.Redirecting to login page');
+        window.location.href='login.html'
+    }
+    else{
+        document.getElementById('Welcome').innerHTML='Hello, '+sessionStorage.getItem('user');
+    }
+
+    function logout()
+    {
+        sessionStorage.clear();
+        window.location.href='login.html'
+    }
+    </script>
+  </body>
+</html>
