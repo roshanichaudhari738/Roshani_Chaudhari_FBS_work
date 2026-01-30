@@ -1,0 +1,12 @@
+.imagecontainer
+{
+    width: 400px;
+    height: auto;
+    border: 2px solid red;
+    
+}
+
+.imagecontainer img{
+    object-fit:cover;
+    
+}
