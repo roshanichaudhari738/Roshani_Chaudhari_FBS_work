@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+//     document.addEventListener("DOMContentLoaded",function(){
+//         document.getElementById("factbtn").addEventListener("mouseenter",function()
+//     {
+//         no=parseInt(document.getElementById("inp").value)
+//         fact=1
+//         for(i=1;i<=no;i++)
+//     {
+//         fact=fact*i;
+//     }
+//     console.log(this);
+//     document.getElementById("display").innerHTML="Factorial is "+fact
+//     })
+//     }
+// )
+
+// document.getElementById("factbtn").addEventListener("click",function()
+//     {
+//         no=parseInt(document.getElementById("inp").value)
+//         fact=1
+//         for(i=1;i<=no;i++)
+//     {
+//         fact=fact*i;
+//     }
+    
+    
+//     document.getElementById("display").innerHTML="Factorial is "+fact
+//     })
+    
+    document.addEventListener("DOMContentLoaded",function()
+{
+    subject=document.getElementsByClassName("subject")
+    for(i=0;i<subject.length;i++)
+    
+        subject[i].addEventListener("click",function(){
+        console.log(this);
+        console.log(this.value);
+        
+        
+})
+})
+</script>
+<body>
+    Enter the no :<input type="text" id="inp">
+    <br>
+    <input type="checkbox" class="subject" value="marathi">Marathi
+    <br>
+    <input type="checkbox" class="subject" value="english">English
+    <br>
+    <input type="checkbox" class="subject" value="hindi">Hindi
+    <br>
+    <input type="checkbox" class="subject" value="Urdu">Urdu
+    <br>
+    <button onclick="factorial()" id="factbtn">Click</button>
+    <br>
+    <span id="display"></span>
+</body>
+</html>
