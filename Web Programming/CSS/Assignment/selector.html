@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML & CSS Assignment</title>
+<style>
+/**************** QUESTION 1 CSS ****************/
+/* Universal Selector */
+*{
+    font-family: Arial;
+}
+
+/* Element Selector */
+body{
+    background-color:#eef7ff;
+    color:#222;
+}
+
+h1{
+    text-align:center;
+}
+
+p{
+    line-height:1.6;
+}
+
+/* Class Selector */
+.skills{
+    background:#dbeafe;
+    padding:10px;
+}
+
+/* ID Selector */
+#name{
+    color:#1e40af;
+}
+
+/* Group Selector */
+h2, h3{
+    color:#0f766e;
+}
+
+/* Descendant Selector */
+.about-me p{
+    background:#ecfeff;
+    padding:10px;
+}
+
+hr{
+    margin:40px 0;
+}
+
+/**************** QUESTION 2 CSS ****************/
+/* Universal Selector */
+*{
+    font-family: Arial;
+}
+
+/* Element Selectors */
+body{
+    background-color:#fdfdf5;
+    color:#222;
+}
+
+h1{
+    color:#006400;
+    text-align:center;
+    background:#ffeb3b;
+    padding:20px;
+    border-bottom:3px solid #ccc;
+    margin-bottom:20px;
+}
+
+h2, h3{
+    background:#e0f2e9;
+    padding:10px;
+    margin-left:15px;
+    border-left:5px solid #2e7d32;
+}
+
+p{
+    color:#2f4f4f;
+    line-height:1.6;
+    margin:10px 20px;
+}
+
+ul{
+    list-style:square;
+    margin-left:40px;
+}
+
+hr{
+    margin:30px 0;
+    height:2px;
+    background:#ccc;
+}
+
+a{
+    color:#388e3c;
+    font-weight:bold;
+    margin-left:20px;
+}
+
+/* Class Selectors */
+.highlight{
+    background:#fff176;
+    font-weight:bold;
+    padding:5px;
+    border-radius:5px;
+}
+
+.note{
+    color:crimson;
+    font-style:italic;
+    background:#f0f0f0;
+    padding:5px;
+}
+
+.footer{
+    text-align:center;
+    font-size:14px;
+    color:grey;
+    background:#f5f5f5;
+    padding:15px;
+}
+
+/* ID Selectors */
+#mainTitle{
+    font-size:32px;
+    padding-top:15px;
+    border-bottom:2px solid #4caf50;
+}
+
+#footerNote{
+    margin-top:20px;
+    padding-top:10px;
+    border-top:1px dashed #999;
+}
+
+/* Group Selector */
+h2, h3, .course{
+    color:#2e7d32;
+}
+
+/* Descendant Selectors */
+.about-section p{
+    font-size:18px;
+    background:#f1f8e9;
+    padding:10px;
+    border-left:4px solid #81c784;
+}
+
+.courses-section li{
+    background:#f9fbe7;
+    padding:5px 0;
+    border-bottom:1px solid #dce775;
+}
+
+#contact p{
+    margin-left:20px;
+}
+</style>
+</head>
+<body>
+
+<!-- QUESTION 1 -->
+<h1 id="name">About Me</h1>
+<div class="about-me">
+<p>Hello! My name is Roshani. I am an MCA student learning Java Full Stack Development.</p>
+</div>
+
+<h2>Skills</h2>
+<ul class="skills">
+<li>Java</li>
+<li>HTML & CSS</li>
+<li>JavaScript</li>
+</ul>
+
+<hr>
+
+<!-- QUESTION 2 -->
+<h1 id="mainTitle">Welcome to FirstBit Solutions</h1>
+<div class="about-section">
+<h2>About Us</h2>
+<p>We provide training in Java, Python, Web Development and more.</p>
+</div>
+
+<div class="courses-section">
+<h2>Courses Offered</h2>
+<ul>
+<li class="course">Java Full Stack</li>
+<li class="course highlight">Python Full Stack</li>
+<li class="course">Front-End Development</li>
+</ul>
+</div>
+
+<div id="contact">
+<h3>Contact Us</h3>
+<p class="note">Email: contact@firstbitsolutions.com</p>
+<p>Phone: 9876543210</p>
+<a href="https://firstbitsolutions.com/">Visit Our Website</a>
+</div>
+
+<hr class="divider">
+<p class="footer" id="footerNote">© 2025 FirstBit Solutions</p>
+
+</body>
+</html>
