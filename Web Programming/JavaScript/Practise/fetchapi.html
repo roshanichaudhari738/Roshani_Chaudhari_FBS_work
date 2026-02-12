@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .products{
+        display: flex;
+        gap: 5px;
+        border: 2px solid red;
+    }
+
+    .product{
+        border: 2px solid red;
+    }
+
+    .cart{
+        border: 2px solid black;
+    }
+
+    .carts{
+        border: 3px solid rgb(70, 150, 86);
+    }
+</style>
+<script>
+    function display()
+    {
+        //this url return the http response
+        fetch("https://dummyjson.com/carts")//return the promise
+        .then(Response=>Response.json())//json() again return the promise
+        .then(data=>displayonPage(data))//data get to the returned promise
+        
+    }
+
+    function displayonPage(data)
+    {
+        // console.log(data);
+        // console.log(data.carts[0]); 
+        innerHTML=`<div class='carts'>`
+        for(i=0;i<data.carts.length;i++)
+    {
+
+     innerHTML=innerHTML+`<div class='cart'>`
+        cart=data.carts[i]
+       
+                   innerHTML=innerHTML+`  Cart Id=${cart.id}
+                    <div class='products'>
+        `
+        // console.log(innerHTML);
+        
+        for(j=0;j<cart.products.length;j++) //this loop use for the products of each product
+        {
+            prod=cart.products[j]
+            innerHTML=innerHTML+`<div class=product>
+                                Title ${prod.title}<br>
+                                <img src='${prod.thumbnail}' width='100px'>    
+                                 </div>         
+                `
+                
+        }
+    
+        innerHTML=innerHTML+`</div></div>`
+    }
+    innerHTML=innerHTML+`</div>`
+        console.log(innerHTML);
+        
+
+        document.getElementById("container").innerHTML=innerHTML;
+    }
+    
+</script>
+<body>
+    <div id="container">
+    </div>
+    <button onclick="display()">Display</button>
+</body>
+</html>
