@@ -15,14 +15,51 @@
             f=f*i;
         document.getElementById("res").innerHTML="Factorial is "+f
     }
+
+    function reverse()
+    {
+        num1=parseInt(document.getElementById("first").value)
+        rev=0
+        while(num1>0)
+	{
+		r1=num1%10;
+		rev=rev*10+r1;
+		num1=parseInt(num1/10);
+        console.log(rev);
+	}
+
+        document.getElementById("res").innerHTML="Reverse is "+rev
+    }
+
+    function palindrome()
+    {
+        num1=parseInt(document.getElementById("first").value)
+        rev=0
+        temp=num1
+        while(num1>0)
+	{
+		r1=num1%10;
+		rev=rev*10+r1;//1 12 121
+		num1=parseInt(num1/10);
+        console.log(rev);
+        console.log(num1);
+        
+	}
+
+        document.getElementById("res").innerHTML=(temp==rev)?"Palindrome":"Not Palindrome";
+    }
+    
 </script>
 <body>
     <div>
          firstNum: <input type="text" id="first">
          <br>
          <button onclick="factorial()" id="btn">Factorial</button>
+         <button onclick="reverse()" id="btn">Reverse</button>
+         <button onclick="palindrome()" id="btn">Palindrome</button>
          <br>
-         <span id="res">Factorial is </span>
+         <span id="res"></span>
     </div>
 </body>
+
 </html>
