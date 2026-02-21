@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<script>
+	function updatelaptop()
+	{
+		let lap=document.getElementById("laptop").value;
+		let price=document.getElementById("lapprice");
+		
+		let pricefield={
+				"hp":60000,
+				"dell":65000,
+				"Levono":70000,
+				"Apple":890000
+		};
+		price.value = lap ? pricefield[lap] : ""; //set value of the input from json 
+	}
+	
+	function updatephone()
+	{
+		let phone=document.getElementById("phone").value;
+		let price=document.getElementById("phoneprice");
+		
+		let pricefield={
+				"Samsung":60000,
+				"Vivo":65000,
+				"Iphone":70000,
+				"Nokia":890000,
+				"One plus":75000
+		};
+		price.value = phone ? pricefield[phone] : "";
+	}
+	
+
+</script>
+<body>
+	<form method="post" action="gd">
+		Laptop : <select id="laptop" required="required" name="laptop" onchange="updatelaptop()">
+	<option>-- Select the Latop --</option>
+	<option value="hp">HP</option>
+	<option value="dell">Dell</option>
+	<option value="Levono">Levono</option>
+	<option value="Apple">Apple</option>
+	</select>
+	price <input type="text" id="lapprice" name="laptopprice" readonly/>
+	<br><br>
+	
+	Phone : <select required="required" name="phone" id="phone" onchange="updatephone()">
+	<option>-- Select the Phone --</option>
+	<option value="Samsung">Samsung</option>
+	<option value="Vivo">Vivo</option>
+	<option value="Iphone">Iphone</option>
+	<option value="Nokia">Nokia</option>
+	<option value="One plus">One plus</option>
+	</select>
+	price <input type="text" id="phoneprice" name="phprice" readonly/>
+	<br><br>
+	
+	<input type="submit">
+	</form>
+</body>
+</html>
