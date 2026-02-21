@@ -21,9 +21,9 @@ public class Logout extends HttpServlet {
 			response.sendRedirect("http://localhost:8080/WebApplication/LoginPage.html");
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 }
+
