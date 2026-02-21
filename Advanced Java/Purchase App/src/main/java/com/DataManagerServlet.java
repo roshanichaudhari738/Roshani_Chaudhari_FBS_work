@@ -33,7 +33,7 @@ public class DataManagerServlet extends HttpServlet {
 			Class.forName(driver);
 			con=DriverManager.getConnection(url, user, pass);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 	
@@ -46,7 +46,8 @@ public class DataManagerServlet extends HttpServlet {
 			String phoneprice=request.getParameter("phprice");
 			
 			HttpSession session=request.getSession(false);
-			String user=(String)session.getAttribute("username");
+			String user=(String)session.getAttribute("username");  //http session store the data in key value pair and this data are in object form 
+			//isliye usko string mai down cast karna hota 
 			pst=con.prepareStatement("insert into cart (username,laptop,laptop_price,phone,phone_price) value(?,?,?,?,?)");
 			pst.setString(1, user);
 			pst.setString(2, lap);
@@ -65,7 +66,6 @@ public class DataManagerServlet extends HttpServlet {
 				session.setAttribute("laptop", lap);
 				session.setAttribute("phone", phone);
 //				String getlap=(String) session.getAttribute("laptop");
-//				System.out.println(getlap);
 				out.println("Welcome to the 2nd servlet.....");
 
 				out.println("...Xyz");
@@ -82,3 +82,4 @@ public class DataManagerServlet extends HttpServlet {
 	}
 
 }
+
