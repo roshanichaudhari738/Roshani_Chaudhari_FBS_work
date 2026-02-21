@@ -13,10 +13,12 @@ public class BillingServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			PrintWriter out=response.getWriter();
+			out.println("Pay Done");
 			out.println("<a href='log'>Logout</a>");
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 
 }
+
