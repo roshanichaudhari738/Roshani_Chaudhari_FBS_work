@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM "hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.Employee" table="emp">
+		<id name="eId" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+		
+		<property name="eName"></property>
+		<property name="eSal">
+			<column name="empSal"></column>
+		</property>
+		
+		<many-to-one
+		name="project"
+		class="com.Project"
+		cascade="all" column="pid"
+		unique="true"
+		/>
+
+	</class>
+	
+	<class name="com.Project" table="project">
+		<id name="Projectid" type="int" column="pid">
+			<generator class="assigned"/>
+		</id>
+		
+	    <property name="projectName"></property>
+		<property name="frontendTech">
+			<column name="frontendtech"></column>
+		</property>
+		
+		<property name="backendTech"></property>
+		
+	</class>
+
+</hibernate-mapping>
