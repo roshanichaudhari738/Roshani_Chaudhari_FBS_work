@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    	<class name="com.sample.Mobile" table="mobile">
+    		<id name="imeino" type="int" column="id">
+    			<generator class="increment"/>
+    		</id>
+    		<property name="brand"></property>
+    		<property name="price"></property>
+    		<property name="model"></property>
+    		<property name="color"></property>
+    	</class>
+    </hibernate-mapping>
